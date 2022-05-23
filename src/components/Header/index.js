@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 import logo from '../../assets/logoanime.png'
 
 export const Header = () => {
@@ -24,17 +25,17 @@ export const Header = () => {
           >
             <ul className="nav__list">
               <li>
-                <a href="/">Inicio</a>
+                <Link to="/">Inicio</Link>
               </li>
               <li>
-                <a href="/">Anime</a>
+                <Link to="/anime">Anime</Link>
+              </li>
+              {/* <li>
+                <Link to="/">Emision</Link>
               </li>
               <li>
-                <a href="/">Emision</a>
-              </li>
-              <li>
-                <a href="/">Calendario</a>
-              </li>
+                <Link to="/">Calendario</Link>
+              </li> */}
             </ul>
           </nav>
           <form
@@ -71,6 +72,7 @@ export const Header = () => {
           ></i>
         </header>
       </div>
+      <Outlet />
     </>
   )
 }
