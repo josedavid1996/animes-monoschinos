@@ -1,0 +1,257 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  font-size: 1.125rem;
+  line-height: 30px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  position: relative;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #171d23;
+  color: #fff;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  padding: 32px 0;
+  padding-left: 170px;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  color: #e9e9e9;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 5px 5px;
+  margin-bottom: 22px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+.btn {
+  background-color: transparent;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  border: 1px solid #f68913;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px 30px;
+  margin: 7px 15px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f68913;
+}
+
+.btn-outline {
+  background-color: #f68913;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  border: 1px solid #f68913;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px 30px;
+  margin: 7px 15px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background-color: transparent;
+}
+
+.icons {
+  font-size: 1.8rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1140px) {
+  .icons {
+    display: none;
+  }
+}
+.container {
+  width: 100%;
+  background-color: #15171a;
+  position: sticky;
+  top: 0;
+}
+
+.header {
+  height: 3.6775rem;
+  max-width: 1700px;
+  margin: 0 auto;
+  background-color: #15171a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+}
+
+.header__logo {
+  width: 6.25rem;
+}
+
+.header__nav {
+  position: fixed;
+  top: 2rem;
+  top: 0;
+  left: 0;
+  background-color: #212529;
+  width: 288px;
+  min-height: 100vh;
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.nav__list {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+}
+.nav__list li {
+  padding: 15px 0 31px;
+}
+
+.header__search {
+  position: fixed;
+  top: 3.5rem;
+  height: 4rem;
+  left: 0;
+  width: 100%;
+  /* border: 1px solid #f68913; */
+  /* border-radius: 10px; */
+  background-color: #212529;
+  padding: 1rem;
+  font-size: 20px;
+  font-weight: 300;
+  color: #8b8e91;
+  /* margin-right: 60px; */
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.search__group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f68913;
+  border-radius: 10px;
+  padding: 6px 12px 6px 1rem;
+  width: 100%;
+  transition: transform 1s ease;
+}
+.search__group i {
+  display: none;
+}
+.search__group input {
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  color: #fff;
+}
+.search__group input:focus {
+  outline: none;
+}
+.search__group input:active {
+  outline: none;
+}
+.search__group i {
+  color: #f68913;
+  cursor: pointer;
+}
+
+.header__group-btns button:nth-child(1) {
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
+  transition: transform 1s ease;
+}
+
+.header__group-btns button:nth-child(2) {
+  position: fixed;
+  bottom: 4rem;
+  left: 4rem;
+  transition: transform 1s ease;
+}
+
+.is-active-nav {
+  transform: translateX(-288px);
+  transition: transform 1s ease;
+}
+
+.is-active-search {
+  transform: translateX(100%);
+  transition: transform 1s ease;
+}
+
+@media screen and (min-width: 1140px) {
+  .header__nav {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    min-height: auto;
+  }
+
+  .nav__list {
+    flex-direction: row;
+  }
+  .nav__list li {
+    padding: 0;
+  }
+  .nav__list li a {
+    font-size: 1rem;
+  }
+
+  .header__search {
+    position: static;
+    height: auto;
+    width: auto;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .header__group-btns button:nth-child(1) {
+    position: static;
+  }
+
+  .header__group-btns button:nth-child(2) {
+    position: static;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

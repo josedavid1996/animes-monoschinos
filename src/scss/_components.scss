@@ -1,0 +1,37 @@
+@mixin btns {
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  border: $boder;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px 30px;
+  margin: 7px 15px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.btn {
+  background-color: transparent;
+  @include btns;
+  &:hover {
+    background-color: $bg-secundary;
+  }
+}
+.btn-outline {
+  background-color: $bg-secundary;
+  @include btns;
+  &:hover {
+    background-color: transparent;
+  }
+}
+.icons {
+  font-size: 1.8rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  z-index: 1;
+}
+@media screen and (min-width: 1140px) {
+  .icons {
+    display: none;
+  }
+}

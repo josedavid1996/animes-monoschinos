@@ -1,0 +1,41 @@
+a {
+  font-size: 1.125rem;
+  line-height: 30px;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: $color-white;
+}
+body {
+  position: relative;
+  font-family: $font;
+  font-size: 16px;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: $bg-primary;
+  color: $color-white;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  padding: 32px 0;
+  padding-left: 170px;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+p {
+  color: $color-parrafo;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 5px 5px;
+  margin-bottom: 22px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+figure {
+  margin: 0;
+}
