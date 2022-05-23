@@ -1,0 +1,55 @@
+.capitulos {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+  grid-auto-rows: minmax(153px, 273px);
+  gap: 20px;
+  justify-content: center;
+  padding: 0 10px;
+  a {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.item__card-img {
+  position: relative;
+  height: calc(100% - 33px);
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+  span {
+    &:nth-child(2) {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 4px 13px;
+      border-radius: 10px;
+      background-image: $bg-number-capitulo;
+    }
+    &:nth-child(3) {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      opacity: 0.8;
+      font-size: 12px;
+    }
+  }
+}
+.item__card-parrafo {
+  p {
+    padding: 12px 5px 5px;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+}

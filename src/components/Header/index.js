@@ -11,7 +11,7 @@ export const Header = () => {
   const showSearch = () => setIsActiveSearch((active) => !active)
   return (
     <>
-      <div className="container">
+      <div className="container__header">
         <header className="header">
           <i className="fa-solid fa-bars icons" onClick={showMenu}></i>
           <figure className="header__logo">
