@@ -1,15 +1,16 @@
-import { useFetch } from '../../hook/useFetch'
+import React, { useContext } from 'react'
+import { AppContext } from '../Context'
 
-export const Capitulos = () => {
-  const { fetchData } = useFetch('https://api.jikan.moe/v4/top/anime?limit=25')
+export const Search = () => {
+  const { searchDataValue } = useContext(AppContext)
 
   return (
     <div className="container">
       <section className="capitulos">
         <h1>Capitulos Recientes</h1>
         <div className="grid">
-          {fetchData &&
-            fetchData.data.map((item) => {
+          {searchDataValue &&
+            searchDataValue.data.map((item) => {
               return (
                 <a key={item.mal_id} className="grid__item" href={item.url}>
                   <div className="item__card-img">
@@ -17,7 +18,7 @@ export const Capitulos = () => {
                       src={item.images.jpg.large_image_url}
                       alt={item.title}
                     />
-                    <span>{item.episodes}</span>
+                    {/* <span>{item.episodes}</span> */}
                     <span className="">{item.source}</span>
                   </div>
                   <div className="item__card-parrafo">

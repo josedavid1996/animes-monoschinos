@@ -1,0 +1,36 @@
+.form__select {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  button {
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    border: $boder;
+    border-radius: 10px;
+    padding: 0 1rem;
+    font-size: 13px;
+    margin: 7px 15px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  select {
+    width: auto;
+    background-color: $bg-footer;
+    padding: 0 1.5rem;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+    color: $color-white;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid $bg-footer;
+    margin: 12px;
+    option {
+      height: 1rem;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Capitulos } from '../Capitulos'
+
 import { Header } from '../Header'
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom'
 import { Home } from '../../routes/Home'

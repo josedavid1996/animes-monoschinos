@@ -1,15 +1,33 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import logo from '../../assets/logoanime.png'
 
+import { AppContext } from '../Context'
+
 export const Header = () => {
+  // CONTEXT
+
+  const { setSearchDataValue } = useContext(AppContext)
+  ///
   const [isActiveNav, setIsActiveNav] = useState(true)
-
   const [isActiveSearch, setIsActiveSearch] = useState(true)
-
+  const [searchValue, setSearchValue] = useState(null)
   const showMenu = () => setIsActiveNav((active) => !active)
-
   const showSearch = () => setIsActiveSearch((active) => !active)
+
+  const onValueChange = (e) => {
+    setSearchValue(e.target.value)
+  }
+  const handlesubmit = async (e) => {
+    e.preventDefault()
+    const resp = await fetch(
+      `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw`
+    )
+    const data = await resp.json()
+    setSearchDataValue(data)
+    setSearchValue(null)
+  }
+
   return (
     <>
       <div className="container__header">
@@ -39,6 +57,8 @@ export const Header = () => {
             </ul>
           </nav>
           <form
+            onSubmit={handlesubmit}
+            // onKeyDown={handlekeyboard}
             className={
               isActiveSearch
                 ? 'header__search'
@@ -47,9 +67,11 @@ export const Header = () => {
           >
             <div className="search__group">
               <input
-                type="search"
+                type="text"
                 name="search"
                 placeholder="Buscar anime..."
+                onChange={onValueChange}
+                // value={searchValue}
               />
               <i className="fa-solid fa-magnifying-glass "></i>
             </div>
