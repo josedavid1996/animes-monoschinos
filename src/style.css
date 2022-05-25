@@ -109,6 +109,13 @@ figure {
     display: none;
   }
 }
+@media screen and (min-width: 1400px) {
+  .btn,
+.btn-outline {
+    padding: 9px 37px;
+    font-size: 20px;
+  }
+}
 .container {
   width: 100%;
 }
@@ -145,6 +152,7 @@ figure {
   width: 288px;
   min-height: 100vh;
   display: flex;
+  transform: translateX(-288px);
   transition: transform 1s ease;
 }
 
@@ -170,6 +178,7 @@ figure {
   color: #8b8e91;
   display: flex;
   transition: transform 1s ease;
+  transform: translateX(100%);
 }
 
 .search__group {
@@ -206,6 +215,7 @@ figure {
   position: fixed;
   top: 4rem;
   left: 4rem;
+  transform: translateX(-288px);
   transition: transform 1s ease;
 }
 
@@ -213,16 +223,17 @@ figure {
   position: fixed;
   bottom: 4rem;
   left: 4rem;
-  transition: transform 1s ease;
-}
-
-.is-active-nav {
   transform: translateX(-288px);
   transition: transform 1s ease;
 }
 
+.is-active-nav {
+  transform: translateX(0) !important;
+  transition: transform 1s ease;
+}
+
 .is-active-search {
-  transform: translateX(100%);
+  transform: translateX(0);
   transition: transform 1s ease;
 }
 
@@ -232,6 +243,7 @@ figure {
     background-color: transparent;
     width: auto;
     min-height: auto;
+    transform: translateX(0);
   }
 
   .nav__list {
@@ -250,6 +262,7 @@ figure {
     width: auto;
     margin-right: 0;
     padding: 0;
+    transform: translateX(0);
   }
   .header__search i {
     display: block;
@@ -257,10 +270,30 @@ figure {
 
   .header__group-btns button:nth-child(1) {
     position: static;
+    transform: translateX(0);
   }
 
   .header__group-btns button:nth-child(2) {
     position: static;
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 1400px) {
+  .header {
+    height: 5.51rem;
+    padding: 0.5rem 3rem;
+  }
+
+  .header__logo {
+    width: 9.375rem;
+  }
+
+  .nav__list li a {
+    font-size: 20px;
+  }
+
+  .search__group input {
+    font-size: 1.25rem;
   }
 }
 .capitulos {
