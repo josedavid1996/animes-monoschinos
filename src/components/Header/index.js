@@ -14,7 +14,8 @@ export const Header = () => {
     setIsActiveNav,
     setIsActiveSearch,
     isActiveNav,
-    isActiveSearch
+    isActiveSearch,
+    setIsPendingSearch
   } = useContext(AppContext)
 
   const searchToggle = () => {
@@ -45,16 +46,29 @@ export const Header = () => {
       alert('Tienes que poner un nombre de anime')
       return
     }
-    const resp = await fetch(
-      `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw`
-    )
-    const data = await resp.json()
-    setSearchDataValue(data)
-    setSearchValue('')
-    setIsActiveSearch('header__search')
+    try {
+      const resp = await fetch(
+        `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw`
+      )
+      const data = await resp.json()
+      setSearchDataValue(data)
+      setIsPendingSearch(false)
+      setSearchValue('')
+      setIsActiveSearch('header__search')
+    } catch (error) {
+      console.error('Ocurrio un error')
+    }
+    // const resp = await fetch(
+    //   `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw`
+    // )
+    // const data = await resp.json()
+    // setSearchDataValue(data)
+    // setSearchValue('')
+    // setIsActiveSearch('header__search')
   }
   const resetHome = () => {
     setSearchDataValue(null)
+    setIsPendingSearch(true)
   }
 
   return (
@@ -91,7 +105,7 @@ export const Header = () => {
                 placeholder="Buscar anime..."
                 onChange={onValueChange}
                 value={searchValue}
-                autocomplete="off"
+                autoComplete="off"
               />
               <i className="fa-solid fa-magnifying-glass "></i>
             </div>

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Capitulos } from '../components/Capitulos'
 import { AppContext } from '../components/Context'
-import { Search } from '../components/Search'
+import { Searches } from '../components/Searches'
 
 export const Home = () => {
   const { searchDataValue } = useContext(AppContext)
-  return <>{searchDataValue ? <Search /> : <Capitulos />}</>
+  return <>{searchDataValue ? <Searches /> : <Capitulos />}</>
 }

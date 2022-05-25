@@ -1,9 +1,10 @@
 import { AppUi } from './AppUi'
 import '../../style.css'
 import { AppContext } from '../Context'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 function App() {
+  const [isPendingSearch, setIsPendingSearch] = useState(true)
   const [searchDataValue, setSearchDataValue] = useState(null)
   const [isActiveNav, setIsActiveNav] = useState('header__nav')
   const [isActiveSearch, setIsActiveSearch] = useState(['header__search'])
@@ -22,7 +23,9 @@ function App() {
         searchValue,
         setSearchValue,
         showMenu,
-        showSearch
+        showSearch,
+        isPendingSearch,
+        setIsPendingSearch
       }}
     >
       <AppUi />
