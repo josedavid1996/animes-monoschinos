@@ -6,8 +6,8 @@ export const Search = () => {
 
   return (
     <div className="container">
-      <section className="capitulos">
-        <h1>Capitulos Recientes</h1>
+      <section className="capitulos busquda">
+        <h1>Resultados de la búsqueda</h1>
         <div className="grid">
           {searchDataValue &&
             searchDataValue.data.map((item) => {
@@ -18,7 +18,6 @@ export const Search = () => {
                       src={item.images.jpg.large_image_url}
                       alt={item.title}
                     />
-                    {/* <span>{item.episodes}</span> */}
                     <span className="">{item.source}</span>
                   </div>
                   <div className="item__card-parrafo">

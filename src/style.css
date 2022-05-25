@@ -141,6 +141,7 @@ figure {
 
 .header__logo {
   width: 6.25rem;
+  cursor: pointer;
 }
 
 .header__nav {

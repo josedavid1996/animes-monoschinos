@@ -41,12 +41,20 @@ export const Header = () => {
   }
   const handlesubmit = async (e) => {
     e.preventDefault()
+    if (searchValue.length === 0) {
+      alert('Tienes que poner un nombre de anime')
+      return
+    }
     const resp = await fetch(
       `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw`
     )
     const data = await resp.json()
     setSearchDataValue(data)
-    setSearchValue(null)
+    setSearchValue('')
+    setIsActiveSearch('header__search')
+  }
+  const resetHome = () => {
+    setSearchDataValue(null)
   }
 
   return (
@@ -54,13 +62,15 @@ export const Header = () => {
       <div className="container__header">
         <header className="header">
           <i className="fa-solid fa-bars icons" onClick={navToggle}></i>
-          <figure className="header__logo">
+          <figure className="header__logo" onClick={resetHome}>
             <img src={logo} alt="logo" />
           </figure>
           <nav className={isActiveNav}>
             <ul className="nav__list">
               <li>
-                <Link to="/">Inicio</Link>
+                <Link to="/" onClick={resetHome}>
+                  Inicio
+                </Link>
               </li>
               <li>
                 <Link to="/anime">Anime</Link>
@@ -80,6 +90,8 @@ export const Header = () => {
                 name="search"
                 placeholder="Buscar anime..."
                 onChange={onValueChange}
+                value={searchValue}
+                autocomplete="off"
               />
               <i className="fa-solid fa-magnifying-glass "></i>
             </div>
