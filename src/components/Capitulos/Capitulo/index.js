@@ -10,7 +10,7 @@ export const Capitulo = ({ fetchData }) => {
           <span className="">{item.source}</span>
         </div>
         <div className="item__card-parrafo">
-          <p>{item.title.slice(0, 20)}</p>
+          <p>{item.title}</p>
         </div>
       </a>
     )

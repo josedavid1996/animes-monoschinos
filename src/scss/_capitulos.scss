@@ -2,18 +2,31 @@
   max-width: 1700px;
   margin: 0 auto;
 }
+.capitulos__banner {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
-  grid-auto-rows: minmax(153px, 273px);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
+  grid-auto-rows: minmax(153px, 185px);
+  gap: 30px 20px;
   justify-content: center;
   padding: 0 10px;
   a {
     padding: 0;
     display: flex;
     flex-direction: column;
+  }
+}
+.grid__item {
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  &:hover {
+    transform: scale(1.05);
   }
 }
 .item__card-img {
@@ -41,7 +54,10 @@
       bottom: 0.5rem;
       left: 0.5rem;
       opacity: 0.8;
-      font-size: 12px;
+      font-size: 1rem;
+      padding: 6px 8px;
+      border-radius: 10px;
+      background-image: $bg-number-capitulo;
     }
   }
 }
@@ -51,5 +67,11 @@
     font-size: 1rem;
     text-align: center;
     margin: 0;
+    line-height: normal;
+  }
+}
+@media screen and(min-width:600px) {
+  .capitulos__banner {
+    width: 70%;
   }
 }

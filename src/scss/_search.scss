@@ -1,0 +1,4 @@
+.grid__search {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-auto-rows: minmax(153px, 397px);
+}

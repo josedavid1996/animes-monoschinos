@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 import logo from '../../assets/logoanime.png'
 
 import { AppContext } from '../Context'
+import { Footer } from '../Footer'
 
 export const Header = () => {
   // CONTEXT
@@ -58,13 +59,6 @@ export const Header = () => {
     } catch (error) {
       console.error('Ocurrio un error')
     }
-    // const resp = await fetch(
-    //   `https://api.jikan.moe/v4/anime?q=${searchValue}&sfw`
-    // )
-    // const data = await resp.json()
-    // setSearchDataValue(data)
-    // setSearchValue('')
-    // setIsActiveSearch('header__search')
   }
   const resetHome = () => {
     setSearchDataValue(null)
@@ -89,12 +83,6 @@ export const Header = () => {
               <li>
                 <Link to="/anime">Anime</Link>
               </li>
-              {/* <li>
-                <Link to="/">Emision</Link>
-              </li>
-              <li>
-                <Link to="/">Calendario</Link>
-              </li> */}
             </ul>
           </nav>
           <form onSubmit={handlesubmit} className={isActiveSearch}>
@@ -121,6 +109,7 @@ export const Header = () => {
         </header>
       </div>
       <Outlet />
+      <Footer />
     </>
   )
 }

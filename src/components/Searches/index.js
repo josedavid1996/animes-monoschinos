@@ -10,7 +10,7 @@ export const Searches = () => {
     <div className="container">
       <section className="capitulos busquda">
         <h1>Resultados de la búsqueda</h1>
-        <div className="grid">
+        <div className="grid grid__search">
           {isPendingSearch ? (
             <Loader />
           ) : (
