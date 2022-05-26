@@ -16,5 +16,5 @@ export const useFetch = (url) => {
     }
     getData(url)
   }, [])
-  return { fetchData, isPending }
+  return { fetchData, isPending, setFetchData }
 }

@@ -9,6 +9,7 @@ function App() {
   const [isActiveNav, setIsActiveNav] = useState('header__nav')
   const [isActiveSearch, setIsActiveSearch] = useState(['header__search'])
   const [searchValue, setSearchValue] = useState('')
+  const [fetchData, setFetchData] = useState(null)
   const showMenu = () => setIsActiveNav((active) => !active)
   const showSearch = () => setIsActiveSearch((active) => !active)
   return (
@@ -25,7 +26,9 @@ function App() {
         showMenu,
         showSearch,
         isPendingSearch,
-        setIsPendingSearch
+        setIsPendingSearch,
+        fetchData,
+        setFetchData
       }}
     >
       <AppUi />

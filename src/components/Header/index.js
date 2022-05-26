@@ -63,6 +63,7 @@ export const Header = () => {
   const resetHome = () => {
     setSearchDataValue(null)
     setIsPendingSearch(true)
+    // setIsActiveNav('header__nav')
   }
 
   return (
