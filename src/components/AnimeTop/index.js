@@ -65,7 +65,9 @@ export const AnimeTop = () => {
       const filtroLetters = filtroYears.filter((letter) => {
         return letter.title.toUpperCase().slice(0, 1) === selectValue.letra
       })
-      console.log(filtroLetters)
+      setFetchData({
+        data: [...filtroLetters]
+      })
     } catch (error) {
       console.erro('Ocurrio un error')
     }
